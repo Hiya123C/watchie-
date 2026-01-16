@@ -19,7 +19,7 @@ function updateCalendar() {
     const month = monthNames[now.getMonth()];
     const year = now.getFullYear();
 
-    // CSS to HTML
+    // JS to HTML
     document.getElementById('time').textContent = formattedTime;
     document.getElementById('seconds').textContent = secondsTime;
     document.getElementById('date').textContent = date;
@@ -41,6 +41,9 @@ document.querySelector('.default-view').style.display = 'block';
 document.querySelector('.clicked-view').style.display = 'none';
 
 app.addEventListener('click', ()=> {
+    if (app.classList.contains('move-mode')) return;
+    app.classList.toggle('active');
+
     if (defaultView.style.display === 'block') {
         defaultView.style.display = 'none';
         clickedView.style.display = 'block';
@@ -48,6 +51,33 @@ app.addEventListener('click', ()=> {
         defaultView.style.display = 'block';
         clickedView.style.display = 'none';
     }
+
+    if (app.classList.contains('move-mode')) e.stopPrpagration();
 });
+
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    window.electronAPI.showContextMenu();
+});
+
+window.electronAPI.onMoveMode((enabled) => {
+    if (enabled) {
+        app.classList.add('move-mode');
+    } else {
+        app.classList.remove('move-mode');
+    }
+});
+
+// defaultView.addEventListener('mouseup', () => {
+//     if (defaultView.classList.contains('move-mode')) {
+//         defaultView.classList.remove('move-mode');
+//     }
+// });
+
+// clickedView.addEventListener('mouseup', () => {
+//     if (clickedView.classList.contains('move-mode')) {
+//         clickedView.classList.remove('move-mode');
+//     }
+// });
 
 
