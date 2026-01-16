@@ -23,8 +23,6 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    /* border-radius: 50px; */
-    /* padding: 1rem 1rem; */
     color: white;
     -webkit-app-region: drag;
 
@@ -37,8 +35,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    /* border: 2px solid orange; */
 }
 
 button, input, .clickable, .default-view, .clicked-view, #time, #date, #month, #day, #year {
@@ -54,8 +50,6 @@ button, input, .clickable, .default-view, .clicked-view, #time, #date, #month, #
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-
-   /* border: 2px solid yellow; */
 }
 
 .default-view {
@@ -71,11 +65,9 @@ button, input, .clickable, .default-view, .clicked-view, #time, #date, #month, #
     max-height: 65vh;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    /* border: 2px solid red; */
 
-    margin-top: 25vh;
-    margin-left: 15vw;
+    margin-left: 19vw;
+    margin-top: 35vh;
 
     pointer-events: auto;
     -webkit-app-region: no-drag;
@@ -86,39 +78,64 @@ button, input, .clickable, .default-view, .clicked-view, #time, #date, #month, #
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
     gap: 1rem;
-    /* border: 2px solid purple; */
 }
 
 .day-year-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     padding: 0;
-    /* border: 2px solid cyan; */
 }
 
 #time {
     color: #FFFFFF;
     text-align: center;
-    font-family: "SF Compact Display";
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     letter-spacing: 0.20rem;
 
     margin-top: 37vh;
 }
 
+#seconds {
+    color: #BDBDBD;
+    font-size: 1rem;
+
+    margin-left: 70vw;
+}
+
 #date, #month {
     color: #FFFFFF;
     text-align: center;
-    font-family: "SF Compact Display";
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 #day, #year {
     color: #BDBDBD;
-    font-family: "SF Compact Text";
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
+
+/* fonts haha */
+@font-face {
+    font-family: "Oxanium";
+    src: url("./fonts/Oxanium-VariableFont_wght.ttf") format("truetype");
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+.title {
+    font-family: "Oxanium";
+    font-weight: 600;
+    font-style: normal;
+}
+
+.sub-title {
+    font-family: "Oxanium";
+    font-weight: 200;
+    font-style: normal;
+}
+
+

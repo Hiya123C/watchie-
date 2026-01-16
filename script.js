@@ -6,7 +6,9 @@ function updateCalendar() {
     const minutes = now.getMinutes().toString().padStart(2,'0');
     const seconds = now.getSeconds().toString().padStart(2,'0');
 
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
+    const formattedTime = `${hours}:${minutes}`;
+    const secondsTime = `${seconds}s`;
+
 
     // ALL THE CALENDAR SHIT
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -19,6 +21,7 @@ function updateCalendar() {
 
     // CSS to HTML
     document.getElementById('time').textContent = formattedTime;
+    document.getElementById('seconds').textContent = secondsTime;
     document.getElementById('date').textContent = date;
     document.getElementById('day').textContent = day;    
     document.getElementById('month').textContent = month;
