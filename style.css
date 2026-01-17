@@ -179,4 +179,38 @@ body {
     font-style: normal;
 }
 
+/* buttonnnn */
+.heart-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    gap: 0.7rem;
+    margin-left: 18vw;
+
+    z-index: 20;
+}
+
+#heart {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.heart-img {
+    width: 30px;
+    height: auto;
+    display: block;
+}
+
+#heart:active .heart-img {
+    scale: 1.1;
+}
+
+#heart-count {
+    display: block;
+    color: #FFFFFF;
+}
 
